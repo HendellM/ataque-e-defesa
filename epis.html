@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de EPIs | Primeira Guerra Mundial</title>
+    <link rel="icon" type="image/x-icon" href="components/imgs/favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+    <!-- CABEÇALHO -->
+    <header class="page-header">
+        <div class="container">
+            <p class="eyebrow fade-in">Arquivo · 1914–1918</p>
+            <h1 class="page-title fade-in" style="--delay: .1s">Arsenal de Proteção</h1>
+            <div class="orn fade-in" style="--delay: .2s"></div>
+            <p class="page-sub fade-in" style="--delay: .3s">
+                Conheça os equipamentos de proteção individual usados pelos soldados na Grande Guerra:
+                para que serviam, como eram e como funcionavam no campo de batalha.
+            </p>
+
+            <form class="busca d-flex fade-in" style="--delay: .4s" id="form-busca" role="search" autocomplete="off">
+                <input class="form-control" type="search" id="busca" list="lista-epis" placeholder="Buscar objeto..." aria-label="Buscar objeto">
+                <button class="btn btn-busca" type="submit" aria-label="Buscar"><i class="bi bi-search"></i></button>
+            </form>
+            <datalist id="lista-epis"></datalist>
+        </div>
+    </header>
+
+    <main class="container pb-5">
+
+        <!-- AVISO QUANDO CHEGA PELO QR CODE -->
+        <div id="aviso-qr" class="aviso-qr d-none" role="status">
+            <i class="bi bi-geo-alt-fill fs-4"></i>
+            <span>Você chegou pelo QR Code: <strong id="aviso-qr-nome"></strong></span>
+            <button type="button" id="aviso-qr-fechar" class="btn btn-sm btn-aviso">Ver todos os EPIs</button>
+        </div>
+
+        <!-- CATÁLOGO -->
+        <section id="catalogo">
+            <h2 class="secao-titulo fade-in">Fichas dos objetos</h2>
+
+            <div id="grid-epis"></div>
+
+            <div id="sem-resultados" class="sem-resultados d-none">
+                <i class="bi bi-search fs-1"></i>
+                <p class="mt-2 mb-0">Nenhum objeto encontrado para essa busca.</p>
+            </div>
+
+            <div id="sem-epis" class="sem-resultados d-none">
+                <i class="bi bi-box-seam fs-1"></i>
+                <p class="mt-2 mb-0">Nenhum EPI cadastrado ainda. Adicione em <code>scripts/epis.js</code>.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="footer-section">
+    <div class="container">
+        <div class="row g-4">
+
+            <div class="col-md-4 fade-in">
+                <h2 class="footer-title">Turma</h2>
+                <ul class="footer-list">
+                    <li>CTII348</li>
+                    <li>Atividade integrada História e Química</li>
+                </ul>
+            </div>
+
+            <div class="col-md-4 fade-in" style="--delay: .15s">
+                <h2 class="footer-title">Alunos</h2>
+                <ul class="footer-list">
+                     <li>Breno Mendes</li>
+                        <li>Daniel Lucas</li>
+                        <li>Hendell Miguel</li>
+                        <li>Ikaro Lima</li>
+                        <li>Luisa Mikie</li>
+                        <li>Maria Isabel</li>
+                        <li>Miguel Soares</li>
+                </ul>
+            </div>
+
+            <div class="col-md-4 fade-in" style="--delay: .3s">
+                <h2 class="footer-title">Professores</h2>
+                <ul class="footer-list">
+                    <li>Profª. Drª Rebeca Previate Medina</li>
+                        <li>Prof. Dr. Ricardo Sorgon Pires</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="institution">
+            <img src="components/imgs/ifsp.png" alt="Logo do IFSP" class="inst-logo">
+            
+        </div>
+        <nav class="footer-nav" aria-label="Navegação do rodapé">
+                <a href="#top" class="footer-link"><i class="bi bi-arrow-up-circle me-1"></i>Voltar ao topo</a>
+                <a href="index.html" class="footer-link"><i class="bi bi-house-door me-1"></i>Voltar à página inicial</a>
+            </nav>
+    </div>
+</footer>
+
+    <!-- MODAL DE VÍDEO -->
+    <div class="modal fade" id="modalVideo" tabindex="-1" aria-labelledby="modalVideoTitulo" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content modal-war">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalVideoTitulo"></h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <div class="ratio ratio-16x9" id="modalVideoCorpo"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="scripts/epis.js"></script>
+</body>
+</html>

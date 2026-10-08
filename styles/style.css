@@ -1,0 +1,556 @@
+:root {
+    --olive: #4b5320;
+    --mud: #6b5b3e;
+    --khaki: #c2b280;
+    --paper: #f4efe2;
+    --ink: #2b2a26;
+    --poppy: #9b1c1c;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    color: var(--ink);
+    font-family: 'Lora', Georgia, serif;
+    background-color: #efe6cf;
+    background-image:
+        radial-gradient(circle at 12% 18%, rgba(155, 28, 28, .10), transparent 35%),
+        radial-gradient(circle at 88% 70%, rgba(75, 83, 32, .18), transparent 40%),
+        linear-gradient(160deg, #f7f1df 0%, #e8dcb8 100%);
+    background-attachment: fixed;
+}
+
+/* =====================================================
+   PÁGINA INICIAL
+   ===================================================== */
+
+/* ---------- HERO ---------- */
+.hero {
+    min-height: 100vh;
+    padding: 4rem 0;
+}
+
+.eyebrow {
+    font-family: 'Special Elite', monospace;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    font-size: .85rem;
+    color: var(--poppy);
+    margin-bottom: 1rem;
+}
+
+.hero-title {
+    font-family: 'Special Elite', monospace;
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    line-height: 1.15;
+    color: var(--olive);
+}
+
+.divider {
+    width: 90px;
+    height: 4px;
+    background: var(--poppy);
+    margin: 1.5rem 0;
+}
+
+.hero-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 60ch;
+    color: #3a382f;
+}
+
+.hero-img {
+    max-height: 520px;
+    object-fit: cover;
+    border: 8px solid #fff;
+    outline: 1px solid var(--khaki);
+    filter: sepia(.35) contrast(1.05);
+    box-shadow: 12px 12px 0 var(--olive);
+}
+
+/* ---------- BOTÕES ---------- */
+.btn-explorar {
+    margin-top: 1.5rem;
+    background: var(--olive);
+    color: #fff;
+    font-family: 'Special Elite', monospace;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: .8rem 2rem;
+    border: 2px solid var(--olive);
+    border-radius: 0;
+    transition: background .25s, color .25s, transform .25s;
+}
+
+.btn-explorar:hover {
+    background: transparent;
+    color: var(--olive);
+    transform: translateY(-3px);
+}
+
+.btn-quiz {
+    margin-top: 1rem;
+    background: transparent;
+    color: var(--poppy);
+    font-family: 'Special Elite', monospace;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: .8rem 2rem;
+    border: 2px solid var(--poppy);
+    border-radius: 0;
+    transition: background .25s, color .25s, transform .25s;
+}
+
+.btn-quiz:hover {
+    background: var(--poppy);
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+/* ---------- RODAPÉ / CRÉDITOS ---------- */
+.footer-section {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 4rem 0 2rem;
+    border-top: 6px solid var(--olive);
+}
+
+.footer-title {
+    font-family: 'Special Elite', monospace;
+    font-size: 1.3rem;
+    color: var(--khaki);
+    margin-bottom: 1rem;
+}
+
+.footer-list {
+    list-style: none;
+    padding: 0;
+    line-height: 1.8;
+    font-size: .95rem;
+}
+
+.footer-link {
+    color: var(--khaki);
+    text-decoration: none;
+    font-family: 'Special Elite', monospace;
+}
+
+.footer-link:hover { color: #fff; }
+
+/* ---------- LOGO DA INSTITUIÇÃO ---------- */
+.institution {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, .15);
+}
+
+.inst-logo {
+    height: 56px;
+    width: auto;
+    background: #fff;
+    padding: 6px;
+    border-radius: 6px;
+}
+
+/* ---------- FADE-IN (aparece de baixo) ---------- */
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity .8s ease, transform .8s ease;
+    transition-delay: var(--delay, 0s);
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .fade-in {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+/* =====================================================
+   PÁGINA DOS EPIs
+   ===================================================== */
+
+/* ---------- CABEÇALHO ---------- */
+.page-header {
+    text-align: center;
+    padding: 3.5rem 0 2rem;
+}
+
+.page-title {
+    font-family: 'Special Elite', monospace;
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    color: var(--olive);
+}
+
+.page-sub {
+    max-width: 60ch;
+    margin: 0 auto;
+    line-height: 1.8;
+    color: #3a382f;
+}
+
+.orn {
+    width: 140px;
+    height: 2px;
+    margin: 1.25rem auto;
+    background: repeating-linear-gradient(90deg, var(--mud) 0 8px, transparent 8px 14px);
+}
+
+.secao-titulo {
+    font-family: 'Special Elite', monospace;
+    font-size: 1.8rem;
+    color: var(--olive);
+    margin: 2.5rem 0 1.5rem;
+}
+
+/* ---------- BUSCA ---------- */
+.busca {
+    max-width: 520px;
+    margin: 2rem auto 0;
+    gap: .4rem;
+}
+
+.busca .form-control {
+    padding: .75rem 1rem;
+    background: var(--paper);
+    border: 2px solid var(--khaki);
+    border-radius: 0;
+    font-family: 'Lora', serif;
+}
+
+.busca .form-control:focus {
+    border-color: var(--khaki);
+    box-shadow: 0 0 0 .2rem rgba(194, 178, 128, .4);
+}
+
+.btn-busca {
+    background: var(--olive);
+    color: #fff;
+    border: 2px solid var(--olive);
+    border-radius: 0;
+}
+
+.btn-busca:hover {
+    background: var(--khaki);
+    border-color: var(--khaki);
+    color: var(--ink);
+}
+
+/* ---------- AVISO (chegou pelo QR Code) ---------- */
+.aviso-qr {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .75rem 1rem;
+    margin-top: 1.5rem;
+    padding: 1rem 1.25rem;
+    background: var(--poppy);
+    color: #fff;
+    font-family: 'Special Elite', monospace;
+    box-shadow: 6px 6px 0 var(--ink);
+}
+
+.btn-aviso {
+    margin-left: auto;
+    background: #fff;
+    color: var(--poppy);
+    border-radius: 0;
+    font-family: 'Special Elite', monospace;
+}
+
+.btn-aviso:hover {
+    background: var(--ink);
+    color: #fff;
+}
+
+/* ---------- GRADE DOS CARTÕES (CSS Grid) ---------- */
+#grid-epis {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2.5rem 2rem;
+    margin: 0;
+    padding: 1rem 0 0;
+}
+
+@media (min-width: 768px) {
+    #grid-epis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (min-width: 1200px) {
+    #grid-epis { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+#grid-epis > .epi-col {
+    display: flex;
+    width: auto;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* ---------- CARTÕES (FICHAS) ---------- */
+.epi-card {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: #fffdf6;
+    border: 2px solid var(--mud);
+    box-shadow: 8px 8px 0 var(--khaki);
+    scroll-margin-top: 100px;
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.epi-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 12px 12px 0 var(--olive);
+}
+
+.epi-numero {
+    position: absolute;
+    top: -14px;
+    left: 16px;
+    z-index: 2;
+    padding: .2rem .7rem;
+    background: var(--poppy);
+    color: #fff;
+    font-family: 'Special Elite', monospace;
+    font-size: .85rem;
+    letter-spacing: .1em;
+    transform: rotate(-3deg);
+    box-shadow: 3px 3px 0 var(--ink);
+}
+
+.epi-img {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    margin: 1.35rem .6rem 0;
+    border: 1px solid var(--khaki);
+    background: var(--paper);
+    overflow: hidden;
+}
+
+.epi-img::before,
+.epi-img::after {
+    content: '';
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.epi-img::before {
+    top: 8px;
+    left: 8px;
+    border-top: 3px solid var(--poppy);
+    border-left: 3px solid var(--poppy);
+}
+
+.epi-img::after {
+    bottom: 8px;
+    right: 8px;
+    border-bottom: 3px solid var(--poppy);
+    border-right: 3px solid var(--poppy);
+}
+
+.epi-img img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: sepia(.4) contrast(1.05);
+    transition: transform .5s ease;
+}
+
+.epi-card:hover .epi-img img { transform: scale(1.06); }
+
+.epi-img-vazia {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    color: var(--mud);
+    font-family: 'Special Elite', monospace;
+    background: repeating-linear-gradient(45deg, #efe6cf 0 12px, #e8dcb8 12px 24px);
+}
+
+.epi-img-vazia i { font-size: 2.5rem; }
+
+.epi-corpo {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 1.25rem 1.25rem 1.5rem;
+}
+
+.epi-nome {
+    font-family: 'Special Elite', monospace;
+    font-size: 1.4rem;
+    color: var(--olive);
+    margin-bottom: .75rem;
+    overflow-wrap: anywhere;
+}
+
+.epi-label {
+    margin: 0 0 .25rem;
+    font-family: 'Special Elite', monospace;
+    font-size: .72rem;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: var(--poppy);
+}
+
+.epi-funcao {
+    flex: 1;
+    line-height: 1.7;
+}
+
+.epi-acoes {
+    display: flex;
+    gap: .5rem;
+    margin-top: 1rem;
+}
+
+.btn-video {
+    flex: 1;
+    background: var(--olive);
+    color: #fff;
+    border: 2px solid var(--olive);
+    border-radius: 0;
+    font-family: 'Special Elite', monospace;
+    font-size: .85rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.btn-video:hover:not(:disabled) {
+    background: transparent;
+    color: var(--olive);
+}
+
+.btn-video:disabled {
+    background: #cfc7ad;
+    border-color: #cfc7ad;
+    color: #6e6955;
+    opacity: 1;
+}
+
+.btn-link-qr {
+    background: transparent;
+    color: var(--mud);
+    border: 2px solid var(--mud);
+    border-radius: 0;
+}
+
+.btn-link-qr:hover {
+    background: var(--mud);
+    color: #fff;
+}
+
+/* destaque quando chega pelo QR Code ou pela busca */
+.epi-card.destaque {
+    outline: 4px solid var(--poppy);
+    outline-offset: 6px;
+    animation: pulso 1.2s ease 2;
+}
+
+@keyframes pulso {
+    0%, 100% { box-shadow: 8px 8px 0 var(--khaki); }
+    50% { box-shadow: 0 0 0 14px rgba(155, 28, 28, .25), 8px 8px 0 var(--khaki); }
+}
+
+.sem-resultados {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: var(--mud);
+    font-family: 'Special Elite', monospace;
+}
+
+/* ---------- MODAL DE VÍDEO ---------- */
+.modal-war {
+    background: var(--ink);
+    color: var(--paper);
+    border: 3px solid var(--khaki);
+    border-radius: 0;
+}
+
+.modal-war .modal-header { border-bottom: 1px solid rgba(255, 255, 255, .15); }
+
+.modal-war .modal-title {
+    font-family: 'Special Elite', monospace;
+    color: var(--khaki);
+}
+
+/* ---------- CARROSSEL (vários itens no mesmo item) ---------- */
+.epi-img .carousel {
+    position: absolute;
+    inset: 0;
+}
+
+.epi-img .carousel-inner,
+.epi-img .carousel-item {
+    height: 100%;
+}
+
+.epi-img .carousel-control-prev,
+.epi-img .carousel-control-next {
+    width: 18%;
+    opacity: .9;
+}
+
+.epi-img .carousel-control-prev-icon,
+.epi-img .carousel-control-next-icon {
+    width: 2.2rem;
+    height: 2.2rem;
+    background-color: rgba(43, 42, 38, .7);
+    background-size: 50%;
+    border-radius: 50%;
+}
+
+.epi-img .carousel-indicators { margin-bottom: .4rem; }
+
+.epi-img .carousel-indicators [data-bs-target] {
+    width: 8px;
+    height: 8px;
+    border: 0;
+    border-radius: 50%;
+}
+.institution {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem 2rem;
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, .15);
+}
+
+.inst-logo {
+    height: 56px;
+    width: auto;
+    margin-left: auto;
+    background: #fff;
+    padding: 6px;
+    border-radius: 6px;
+}
+
+.footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .75rem 1.75rem;
+}
