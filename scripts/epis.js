@@ -2,7 +2,14 @@ const epis = [];
 
 
 // ↓ ADICIONE SEUS EPIs AQUI ↓
-
+adicionarEpi({
+    nome: 'Pano com Água ou Xixi',
+    funcao: 'Usado para combater o Gás Cloro (Cl₂) nos primeiros ataques de 1915. A água funciona porque o cloro se dissolve fácil nela, reagindo para formar ácido clorídrico (HCl) e ácido hipocloroso (HClO), o que segura parte do gás no pano. O xixi melhora isso porque a amônia (NH₃) nele contida reage quimicamente neutralizando o cloro e formando cloraminas (NH₂Cl) e sais não tóxicos antes que o veneno seja inalado. Embora tenha salvo milhares de soldados no pânico inicial, era um improviso pouco eficiente: o pano secava rápido, cobria mal o rosto e não protegia contra os gases mais letais que surgiram depois.',
+    imagens: [
+        'components/imgs/img-objeto/pano-improvisado-1.jpg'
+    ],
+    video: 'https://www.youtube.com/watch?v=DXjtkwDQ1bA'
+})
 adicionarEpi({
     nome: 'Naverdatchi',
     funcao: 'Algúem muito arrogantchi...',

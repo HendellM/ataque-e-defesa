@@ -554,3 +554,9 @@ body {
     flex-wrap: wrap;
     gap: .75rem 1.75rem;
 }
+@media (max-width: 575.98px) {
+    .hero .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
